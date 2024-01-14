@@ -6,13 +6,13 @@ createApp({
             url: 'https://vue3-course-api.hexschool.io/v2',
             path: 'reirei',
             products: [],
-            temp: {}
+            tempProduct: {}
         }
     },
     methods:{
         loginCheck(){
             axios.post(`${this.url}/api/user/check`)
-                .then(()=>{
+                .then((res)=>{
                     //確認登入後呼叫取得商品資料
                     this.getProduct();
                 })
